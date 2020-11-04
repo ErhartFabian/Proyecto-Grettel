@@ -1,0 +1,59 @@
+*{
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color: #f1f1e8;
+}
+
+header{
+    background-color: #206a5d;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 0.7cm;
+    font-weight: bold;
+    color:white;
+    justify-content: center;
+    
+}
+
+#next{
+    color:white;
+    position: absolute;
+    right: 1%;
+}
+#before{
+    color: white;
+    position: absolute;
+    left: 1%; 
+}
+#contenedor {
+    width: 100%;
+    height: 100%;  
+    position: relative;  
+}
+
+#todo{
+    margin-left: 1%;
+    margin-right: 20%;
+    margin-top: 5%;
+    padding: 10px;
+}
+td input{
+    width: 100%;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
