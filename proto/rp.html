@@ -1,0 +1,59 @@
+<!-- PHP DATABASE CONECTION -->
+<?php
+$servername = "localhost";
+$database = "bdportafolio";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rp.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5534c6ecc7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a id="before" href="vc.html"> <i class="fas fa-arrow-left"></i> </a>
+        <h3>Registro de Proyectos</h3>
+        <a id="next" href="avcp.html"> <i class="fas fa-arrow-right"></i> </a>
+    </header>
+    <div id="todo">
+        <div id="contenedor">
+            <div class="inf">
+                <h2>Identificador</h2>
+                <input type="text">
+            </div>
+            <div class="inf">
+                <h2>Descripción</h2>
+                <input type="text">
+            </div>
+            <div class="inf">
+                <h2>Costo</h2>
+                <input type="text">
+            </div>
+            <div class="inf" style="height: 30px;">
+                <button>Añadir Proyecto</button>
+            </div>
+            
+            <div class="inf">
+                <h2>Proyectos registrados</h2>
+                <input type="text">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

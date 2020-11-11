@@ -1,0 +1,81 @@
+<!-- PHP DATABASE CONECTION -->
+<?php
+$servername = "localhost";
+$database = "bdportafolio";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="vc.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/5534c6ecc7.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <a id="before" href="prot.html"> <i class="fas fa-arrow-left"></i> </a>
+        <h3>Valoración de criterios</h3>
+        <a id="next" href="rp.html"> <i class="fas fa-arrow-right"></i> </a>
+        
+    </header>
+    <div id="todo">
+        
+        <div id="contenedor">
+            <table>
+                <tr>
+                  <th>Criterio</th>
+                  <th>Tipo</th>
+                  <th>Ponderacion</th>
+                </tr>
+                <tr>
+                  <td>Duración(en meses)</td>
+                  <td>Cuantitativo</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Valor presente neto</td>
+                  <td>Cuantitativo</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Período de recuperación de la inversión
+                    (en meses) </td>
+                  <td>Cuantitativo</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Riesgo</td>
+                  <td>Cualitativo</td>
+                  <td><input type="text"></td>
+                </tr>
+                <tr>
+                  <td>Generación de tecnología propietaria</td>
+                  <td>Cualitativo</td>
+                  <td><input type="text"></td>
+                </tr>
+              </table>
+        </div>
+        
+        <div id="total">
+            <div id="savizq"><button id="save">Guardar Ponderaciónes</button></div>
+            <div id="savder"><span>Total</span>
+                <input type="text"></div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
