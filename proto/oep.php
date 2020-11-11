@@ -1,3 +1,19 @@
+<!-- PHP DATABASE CONECTION -->
+<?php
+$servername = "localhost";
+$database = "bdportafolio";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -10,7 +26,7 @@
     </head>
     <body>
         <header>
-             <a id="before" href="mdpp.html"> <i class="fas fa-arrow-left"></i></a>
+             <a id="before" href="mdpp.php"> <i class="fas fa-arrow-left"></i></a>
             <h3>Orden de ejecución de los proyectos</h3>
         </header>
         <div id="todo">

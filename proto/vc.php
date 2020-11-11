@@ -1,3 +1,19 @@
+<!-- PHP DATABASE CONECTION -->
+<?php
+$servername = "localhost";
+$database = "bdportafolio";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,9 +26,9 @@
 </head>
 <body>
     <header>
-        <a id="before" href="prot.html"> <i class="fas fa-arrow-left"></i> </a>
+        <a id="before" href="prot.php"> <i class="fas fa-arrow-left"></i> </a>
         <h3>Valoración de criterios</h3>
-        <a id="next" href="rp.html"> <i class="fas fa-arrow-right"></i> </a>
+        <a id="next" href="rp.php"> <i class="fas fa-arrow-right"></i> </a>
         
     </header>
     <div id="todo">

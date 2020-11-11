@@ -1,3 +1,18 @@
+<!-- PHP DATABASE CONECTION -->
+<?php
+$servername = "localhost";
+$database = "bdportafolio";
+$username = "root";
+$password = "";
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $database);
+// Check connection
+if (!$conn) {
+      die("Connection failed: " . mysqli_connect_error());
+}
+ 
+echo "Connected successfully";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,31 +28,33 @@
 <body>
     <header>
         <h3>Gestión del portafolio</h3>
-        <a id="next" href="vc.html"> <i class="fas fa-arrow-right"></i></a>
+        <a id="next" href="vc.php"> <i class="fas fa-arrow-right"></i></a>
         
     </header>
     <div id="todo">
-        
-        <div id="contenedor">
-            <div class="form">
+        <form id="contenedor">
+            <div class="form" method="GET">
                 <h3>
                     PLANEACIÓN
                 </h3>
-                <input type = "texto">
+                <input type = "texto" name="inpPlaneacion">
+                <?php
+                    
+                ?>
             </div>
             <div class="form">
                 <h3>
                     Analista
                 </h3>
-                <input type = "texto">
+                <input type = "texto" name="inpAnalista">
             </div>
             <div class="form">
                 <h3>
                     Fecha
                 </h3>
-                <input type = "date">
+                <input type = "date" name="inpFecha">
             </div>
-        </div>
+        </form>
     </div>
 </body>
 

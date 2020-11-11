@@ -25,9 +25,9 @@ echo "Connected successfully";
 </head>
 <body>
     <header>
-        <a id="before" href="vc.html"> <i class="fas fa-arrow-left"></i> </a>
+        <a id="before" href="vc.php"> <i class="fas fa-arrow-left"></i> </a>
         <h3>Asignación de valores por criterio y proyecto </h3>
-        <a id="next" href="mdpp.html"> <i class="fas fa-arrow-right"></i> </a>
+        <a id="next" href="mdpp.php"> <i class="fas fa-arrow-right"></i> </a>
     </header>
     <div id="todo">
         <div id="contenedor">
