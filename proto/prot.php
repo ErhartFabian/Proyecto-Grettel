@@ -1,5 +1,50 @@
 <!-- PHP DATABASE CONECTION -->
 <?php
+$inpPlaneacion = $_POST['inpPlaneacion']; 
+$inpAnalista = $_POST['inpAnalista'];
+$inpFecha = $_POST['inpFecha'];
+
+if (!empty($inpPlaneacion) || !empty($inpAnalista) || !empty($inpFecha)) {
+    $servername = "localhost";
+    $database = "bdportafolio";
+    $username = "root";
+    $password = "";
+    //create connection
+    $conn = mysqli_connect($servername, $username, $password, $database);
+    if (mysqli_connect_error()) {
+    die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
+    } else {
+    $SELECT = "SELECT email From register Where email = ? Limit 1";
+    $INSERT = "INSERT Into register (username, password, gender, email, phoneCode, phone) values(?, ?, ?, ?, ?, ?)";
+    //Prepare statement
+    $stmt = $conn->prepare($SELECT);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $stmt->bind_result($email);
+    $stmt->store_result();
+    $stmt->store_result();
+    $stmt->fetch();
+    $rnum = $stmt->num_rows;
+    if ($rnum==0) {
+        $stmt->close();
+        $stmt = $conn->prepare($INSERT);
+        $stmt->bind_param("ssssii", $username, $password, $gender, $email, $phoneCode, $phone);
+        $stmt->execute();
+        echo "New record inserted sucessfully";
+    } else {
+        echo "Someone already register using this email";
+    }
+    $stmt->close();
+    $conn->close();
+    }
+} 
+else {
+    echo "All field are required";
+    die();
+}
+
+
+/*
 $servername = "localhost";
 $database = "bdportafolio";
 $username = "root";
@@ -10,52 +55,22 @@ $conn = mysqli_connect($servername, $username, $password, $database);
 if (!$conn) {
       die("Connection failed: " . mysqli_connect_error());
 }
- 
+else{
 echo "Connected successfully";
-?>
-<!DOCTYPE html>
-<html lang="en">
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="prot.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/5534c6ecc7.js" crossorigin="anonymous"></script>
-    <title>Document</title>
-</head>
-
-<body>
-    <header>
-        <h3>Gestión del portafolio</h3>
-        <a id="next" href="vc.php"> <i class="fas fa-arrow-right"></i></a>
-        
-    </header>
-    <div id="todo">
-        <form id="contenedor">
-            <div class="form" method="GET">
-                <h3>
-                    PLANEACIÓN
-                </h3>
-                <input type = "texto" name="inpPlaneacion">
-                <?php
-                    
-                ?>
-            </div>
-            <div class="form">
-                <h3>
-                    Analista
-                </h3>
-                <input type = "texto" name="inpAnalista">
-            </div>
-            <div class="form">
-                <h3>
-                    Fecha
-                </h3>
-                <input type = "date" name="inpFecha">
-            </div>
-        </form>
-    </div>
-</body>
-
-</html>
+// Check if the form is submitted 
+if ( isset( $_POST['submit'] ) ) { 
+    // retrieve the form data by using the element's name attributes value as key 
+    $inpPlaneacion = $_POST['inpPlaneacion']; 
+    $inpAnalista = $_POST['inpAnalista'];
+    $inpFecha = $_POST['inpFecha'];
+    // display the results
+    echo '<h3>Form POST Method</h3>'; 
+    echo 'Planeacion: ' . $inpPlaneacion . ' analista: ' . $inpAnalista . ' fecha: ' . $inpFecha;  
+    exit; 
+} 
+else {
+    echo 'Se trono aqui';
+}*/
+?>?>?>?>?>?>?>?>
